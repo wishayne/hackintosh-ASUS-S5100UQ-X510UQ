@@ -1,0 +1,4 @@
+# for Max OS X System Files
+.DS_Store
+._*
+Thumbs.db
