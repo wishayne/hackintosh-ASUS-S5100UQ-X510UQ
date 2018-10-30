@@ -1,0 +1,37 @@
+#Maintained by: wishayne for: 派奇
+#battery_ASUS_S5100UQ.txt
+
+# version(版本): 1.0
+# Update Time(更新时间) : 2018-10-27
+
+# initial work by wishayne 2018-10-27, 由 wishayne 制作 
+
+# works for: 针对
+#  ASUS S5100UQ / motherboard_X510UQ
+
+# ==== Field devide 字段拆分 ====
+# B0C3
+into device label EC0 code_regex B0C3,\s+16, replace_matched begin B0CA,8,B0CB,8, end;
+# B0SN
+into device label EC0 code_regex B0SN,\s+16, replace_matched begin B0SA,8,B0SB,8, end;
+# B1SN
+into device label EC0 code_regex B1SN,\s+16 replace_matched begin B1SA,8,B1SB,8 end;
+
+# ==== Replace called method 替换调用方法 ====
+# B0C3
+into method label _BIX code_regex \(B0C3, replaceall_matched begin (B1B2(B0CA,B0CB), end;
+# B0SN
+into method label BIFA code_regex \(B0SN, replaceall_matched begin (B1B2(B0SA,B0SB), end;
+# B1SN
+into method label BIFA code_regex \(B1SN, replaceall_matched begin (B1B2(B1SA,B1SB), end;
+
+# ==== Data handling method 数据处理方法 ====
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized)\n
+{\n
+Return(Or(Arg0, ShiftLeft(Arg1, 8)))\n
+}\n
+end;
