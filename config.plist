@@ -24,6 +24,8 @@
 				<false/>
 				<key>FixRTC</key>
 				<false/>
+				<key>FixRegions</key>
+				<true/>
 				<key>FixTMR</key>
 				<false/>
 			</dict>
