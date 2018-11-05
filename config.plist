@@ -26,6 +26,8 @@
 				<false/>
 				<key>FixRegions</key>
 				<true/>
+				<key>FixShutdown</key>
+				<true/>
 				<key>FixTMR</key>
 				<false/>
 			</dict>
@@ -250,7 +252,7 @@
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>NeverHibernate</key>
-		<true/>
+		<false/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
