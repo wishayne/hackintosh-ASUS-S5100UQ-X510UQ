@@ -256,7 +256,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>4</integer>
+		<integer>1</integer>
 	</dict>
 	<key>Comment</key>
 	<string>This file is for 10.12.6+ with native KabyLake support</string>
